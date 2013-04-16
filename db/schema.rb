@@ -16,12 +16,9 @@ ActiveRecord::Schema.define(:version => 20130416220546) do
   create_table "photos", :force => true do |t|
     t.integer  "photoable_id"
     t.string   "photoable_type"
-    t.string   "img_file_name"
-    t.string   "img_content_type"
-    t.integer  "img_file_size"
-    t.datetime "img_updated_at"
-    t.datetime "created_at",       :null => false
-    t.datetime "updated_at",       :null => false
+    t.string   "img"
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
   end
 
   create_table "postings", :force => true do |t|
