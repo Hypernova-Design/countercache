@@ -1,0 +1,18 @@
+<%= semantic_form_for @posting do |f| %>
+  <%= f.inputs do %>
+    <%= f.input :title %>
+    <%= f.input :body %>
+  <% end %>
+  <%= f.inputs :id => :posting_photos_inputs,
+    :class => 'formtastic-hide-labels photos-inputs' do %>
+    <%= f.semantic_fields_for :photos do |p| %>
+      <%= p.input :img, :input_html => {
+        :accept => 'image/*',
+        :class => 'i-file-input-image' } %>
+      <%= p.input :_destroy, :as => :hidden %>
+    <% end %>
+  <% end %>
+  <%= f.actions do %>
+    <%= f.action :submit, :button_html => { :id => 'submit_posting' } %>
+  <% end %>
+<% end %>
